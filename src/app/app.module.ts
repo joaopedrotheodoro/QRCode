@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, disableDebugTools } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { Dialogs } from '@ionic-native/dialogs/ngx';
 
 import { QRScanner } from '@ionic-native/qr-scanner/ngx';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,12 +21,12 @@ import { QRScanner } from '@ionic-native/qr-scanner/ngx';
   providers: [
     StatusBar,
     SplashScreen,
+ 
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     QRScanner,
-    Dialogs 
-
-
+    Dialogs,
+    ScreenOrientation,
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
